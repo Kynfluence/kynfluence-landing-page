@@ -76,7 +76,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 20px 0;
+  padding: 30px 0;
   background: #fff;
 }
 
@@ -137,7 +137,8 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
   color: #434175;
   white-space: nowrap;
   transition: 0.3s;
@@ -440,6 +441,7 @@ h6 {
   border: 2px solid #5a5af3;
   margin-right: 10px;
   font-weight: bold;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -456,19 +458,6 @@ h6 {
 .btn-get-quote:hover {
   background: #5a5af3;
   color: #fff;
-}
-
-.background-people {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  bottom: 0;
-  background-image: url("../img/backgroundpeople.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0;
 }
 
 .background-course-logo {
@@ -500,7 +489,7 @@ h6 {
   padding: 0;
 }
 
-.smaller-background-people {
+.background-people {
   position: fixed;
   z-index: -2;
   width: 100%;
@@ -508,23 +497,13 @@ h6 {
   top: 0;
   bottom: 0;
   background-image: url("../img/backgroundpeople.JPG");
-  background-size: cover;
+  background-size: contain;
+  background-position-y: 10vh;
   background-repeat: repeat-y;
   padding: 0;
 }
 
 .background-people-shadow {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  background-color: #000;
-  opacity: 0.8;
-  height: 100vh;
-}
-
-.smaller-background-people-shadow {
   position: fixed;
   width: 100%;
   z-index: -1;
@@ -671,33 +650,20 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# Founder
 --------------------------------------------------------------*/
-/* .about .content h2 {
-  font-weight: 700;
-  font-size: 44px;
-  line-height: 50px;
-  margin-bottom: 20px;
-  color: #434175;
-} */
 
-.about .content h3 {
-  font-weight: 500;
-  line-height: 32px;
-  font-size: 24px;
-}
-
-.about .content ul {
+.founder .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.founder .content ul li {
   padding: 10px 0 0 28px;
   position: relative;
 }
 
-.about .content ul i {
+.founder .content ul i {
   left: 0;
   top: 7px;
   position: absolute;
@@ -705,7 +671,7 @@ section {
   color: #5a5af3;
 }
 
-.about .content p:last-child {
+.founder .content p:last-child {
   margin-bottom: 0;
 }
 
@@ -910,14 +876,7 @@ section {
   fill: #11dbcf;
 }
 
-/*--------------------------------------------------------------
-# Features
---------------------------------------------------------------*/
-.features {
-  padding-top: 0;
-}
-
-.features .icon-box {
+.icon-box {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -925,13 +884,13 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.features .icon-box i {
+.icon-box i {
   font-size: 32px;
   padding-right: 10px;
   line-height: 1;
 }
 
-.features .icon-box h3 {
+.icon-box h3 {
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -939,12 +898,12 @@ section {
   font-size: 16px;
 }
 
-.features .icon-box h3 a {
+.icon-box h3 a {
   color: #434175;
   transition: ease-in-out 0.3s;
 }
 
-.features .icon-box:hover h3 a {
+.icon-box:hover h3 a {
   color: #5a5af3;
 }
 
@@ -1849,4 +1808,19 @@ section {
   background-position: center;
   height: 5vh;
   width: 100%;
+}
+
+.founder-photo {
+  background-image: url(../img/founder.jpeg);
+  width: 100%;
+  height: 75vh;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.seen {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
 }
