@@ -496,7 +496,7 @@ h6 {
   height: 100%;
   top: 0;
   bottom: 0;
-  background-image: url("../img/backgroundpeople.JPG");
+  background-image: url("../img/backgroundpeople.jpg");
   background-size: contain;
   background-position-y: 10vh;
   background-repeat: repeat-y;
@@ -525,7 +525,7 @@ h6 {
 }
 
 .story-photo {
-  background-image: url("../img/backgroundpeople.JPG");
+  background-image: url("../img/backgroundpeople.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
