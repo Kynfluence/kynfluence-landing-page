@@ -216,4 +216,42 @@
    */
   new PureCounter();
 
+
+  // Create the observer
+  const observer = new IntersectionObserver(entries => {
+    const leftAnimations = ["founder-photo", "course-description"];
+    const rightAnimations = ["founder-description", "course-logo-wrapper"];
+    const appearAnimations = ["social-media-wrapper"];
+
+    const anyMatch = (classList, animations) => {
+      for (const classItem of classList.values()) {
+        if (animations.includes(classItem)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    // We will fill in the callback later...
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // It's visible. Add the animation class here!
+        if (anyMatch(entry.target.classList, leftAnimations)) {
+          entry.target.classList.add('appearfromleft');
+        } else if(anyMatch(entry.target.classList, rightAnimations)) {
+          entry.target.classList.add('appearfromright');
+        } else if(anyMatch(entry.target.classList, appearAnimations)) {
+          entry.target.classList.add('appear');
+        }
+      }
+    });
+  });
+
+  // Tell the observer which elements to track
+  observer.observe(document.querySelector('.founder-photo'));
+  observer.observe(document.querySelector('.founder-description'));
+  observer.observe(document.querySelector('.course-description'));
+  observer.observe(document.querySelector('.course-logo-wrapper'));
+  observer.observe(document.querySelector('.social-media-wrapper'));
 })()
