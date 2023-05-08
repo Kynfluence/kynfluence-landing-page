@@ -216,42 +216,75 @@
    */
   new PureCounter();
 
+  document.addEventListener("DOMContentLoaded", function(){
+    const leftAnimations = ["founder-photo", "course-description", "founder-story-photo-wrapper", "sales-proff-wrapper", "syllabus-left-wrapper", "money-back-text-wrapper", "is-not-for-wrapper"];
+    const rightAnimations = ["founder-description", "course-logo-wrapper", "founder-story-text-wrapper", "social-proff-wrapper", "syllabus-right-wrapper", "money-back-photo-wrapper", "is-for-wrapper"];
+    const appearAnimations = ["social-media-wrapper", "introduction-wrapper", "course-video-wrapper", "success-wrapper", "will-be-wrapper", "faq-wrapper", "reviews-wrapper", "review-video-wrapper"];
+    const CLASSES_TO_TRACK = [
+      '.founder-photo',
+      '.founder-description',
+      '.course-description',
+      '.course-logo-wrapper',
+      '.social-media-wrapper',
+      '.introduction-wrapper',
+      '.course-video-wrapper',
+      '.founder-story-photo-wrapper',
+      '.founder-story-text-wrapper',
+      '.sales-proff-wrapper',
+      '.social-proff-wrapper',
+      '.success-wrapper',
+      '.syllabus-left-wrapper',
+      '.syllabus-right-wrapper',
+      '.will-be-wrapper',
+      '.faq-wrapper',
+      '.is-not-for-wrapper',
+      '.is-for-wrapper',
+      '.money-back-text-wrapper',
+      '.money-back-photo-wrapper',
+      '.reviews-wrapper',
+      '.review-video-wrapper',
+    ];
 
-  // Create the observer
-  const observer = new IntersectionObserver(entries => {
-    const leftAnimations = ["founder-photo", "course-description"];
-    const rightAnimations = ["founder-description", "course-logo-wrapper"];
-    const appearAnimations = ["social-media-wrapper"];
-
-    const anyMatch = (classList, animations) => {
-      for (const classItem of classList.values()) {
-        if (animations.includes(classItem)) {
-          return true;
+    // Create the observer
+    const observer = new IntersectionObserver(entries => {
+      const anyMatch = (classList, animations) => {
+        for (const classItem of classList.values()) {
+          if (animations.includes(classItem)) {
+            return true;
+          }
         }
+
+        return false;
       }
 
-      return false;
+      // We will fill in the callback later...
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // It's visible. Add the animation class here!
+          if (anyMatch(entry.target.classList, leftAnimations)) {
+            entry.target.classList.add('appearfromleft');
+          } else if(anyMatch(entry.target.classList, rightAnimations)) {
+            entry.target.classList.add('appearfromright');
+          } else if(anyMatch(entry.target.classList, appearAnimations)) {
+            entry.target.classList.add('appear');
+          }
+        }
+      });
+    });
+
+
+    const ifExistsTrackWithObserve = (className, observer) => {
+      if (document.querySelector(className)) {
+        observer.observe(document.querySelector(className));
+      }
     }
 
-    // We will fill in the callback later...
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // It's visible. Add the animation class here!
-        if (anyMatch(entry.target.classList, leftAnimations)) {
-          entry.target.classList.add('appearfromleft');
-        } else if(anyMatch(entry.target.classList, rightAnimations)) {
-          entry.target.classList.add('appearfromright');
-        } else if(anyMatch(entry.target.classList, appearAnimations)) {
-          entry.target.classList.add('appear');
-        }
-      }
+    // Tell the observer which elements to track
+    CLASSES_TO_TRACK.map(className => {
+      ifExistsTrackWithObserve(className, observer);
     });
   });
 
-  // Tell the observer which elements to track
-  observer.observe(document.querySelector('.founder-photo'));
-  observer.observe(document.querySelector('.founder-description'));
-  observer.observe(document.querySelector('.course-description'));
-  observer.observe(document.querySelector('.course-logo-wrapper'));
-  observer.observe(document.querySelector('.social-media-wrapper'));
+  
+
 })()
