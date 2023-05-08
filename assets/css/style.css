@@ -487,6 +487,7 @@ h6 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  image-orientation: none;
   padding: 0;
 }
 
