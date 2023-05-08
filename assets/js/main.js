@@ -7,7 +7,7 @@
 */
 
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -116,7 +116,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -125,7 +125,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -135,7 +135,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -173,9 +173,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -218,7 +218,7 @@
    */
   new PureCounter();
 
-  document.addEventListener("DOMContentLoaded", function(){
+  document.addEventListener("DOMContentLoaded", function () {
     const leftAnimations = ["founder-photo", "course-description", "founder-story-photo-wrapper", "sales-proff-wrapper", "syllabus-left-wrapper", "money-back-text-wrapper", "is-not-for-wrapper"];
     const rightAnimations = ["founder-description", "course-logo-wrapper", "founder-story-text-wrapper", "social-proff-wrapper", "syllabus-right-wrapper", "money-back-photo-wrapper", "is-for-wrapper"];
     const appearAnimations = ["social-media-wrapper", "introduction-wrapper", "course-video-wrapper", "success-wrapper", "will-be-wrapper", "faq-wrapper", "reviews-wrapper", "review-video-wrapper"];
@@ -265,9 +265,9 @@
           // It's visible. Add the animation class here!
           if (anyMatch(entry.target.classList, leftAnimations)) {
             entry.target.classList.add('appearfromleft');
-          } else if(anyMatch(entry.target.classList, rightAnimations)) {
+          } else if (anyMatch(entry.target.classList, rightAnimations)) {
             entry.target.classList.add('appearfromright');
-          } else if(anyMatch(entry.target.classList, appearAnimations)) {
+          } else if (anyMatch(entry.target.classList, appearAnimations)) {
             entry.target.classList.add('appear');
           }
         }
@@ -287,6 +287,32 @@
     });
   });
 
-  
+  const myModalAlternative = new bootstrap.Modal('#exampleModal', []);
 
+  var showModal = (function () {
+    var executed = false;
+    return function () {
+      if (!executed) {
+        executed = true;
+        myModalAlternative.show();
+      }
+    };
+  })();
+
+  var addEvent = function (obj, evt, fn) {
+    if (obj.addEventListener) {
+      obj.addEventListener(evt, fn, false);
+    }
+    else if (obj.attachEvent) {
+      obj.attachEvent("on" + evt, fn);
+    }
+  };
+
+  addEvent(document, "mouseout", function (event) {
+    event = event ? event : window.event;
+    var from = event.relatedTarget || event.toElement;
+    if ((!from || from.nodeName == "HTML") && event.clientY <= 100) {
+      showModal();
+    }
+  });
 })()
