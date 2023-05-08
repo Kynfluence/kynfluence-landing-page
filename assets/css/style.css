@@ -158,6 +158,12 @@ h6 {
   color: #5a5af3;
 }
 
+.navbar .getstarted.active {
+  animation: none;
+  color: #fff;
+  background: #7272f5;
+}
+
 .navbar .getstarted,
 .navbar .getstarted:focus {
   padding: 6px 25px;
@@ -421,8 +427,7 @@ h6 {
   color: #5a5af3;
 }
 
-.btn-get-started,
-.btn-get-quote {
+.btn-get-started {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -433,6 +438,9 @@ h6 {
   border-radius: 3px;
   transition: 0.5s;
   border-radius: 50px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
 }
 
 .btn-get-started {
@@ -448,16 +456,7 @@ h6 {
 .btn-get-started:hover {
   background: #7272f5;
   border-color: #7272f5;
-}
-
-.btn-get-quote {
-  color: #fff;
-  border: 2px solid #5a5af3;
-}
-
-.btn-get-quote:hover {
-  background: #5a5af3;
-  color: #fff;
+  animation: none;
 }
 
 .background-course-logo {
@@ -576,8 +575,7 @@ h6 {
     width: 70%;
   }
 
-  .btn-get-started,
-  .btn-get-quote {
+  .btn-get-started {
     padding-left: 18px;
     padding-right: 18px;
     font-size: 14px;
@@ -598,8 +596,7 @@ h6 {
     width: 80%;
   }
 
-  .btn-get-started,
-  .btn-get-quote {
+  .btn-get-started {
     padding-left: 18px;
     padding-right: 18px;
     font-size: 14px;
@@ -1873,4 +1870,58 @@ section {
 @keyframes appearfromright {
   from {right: -600px;}
   to {right: 0;}
+}
+
+.pulse {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+.shake {
+  animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.shake:hover {
+  animation: none;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(0, 5px, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(0, 4px, 0);
+  }
 }
