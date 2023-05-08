@@ -466,14 +466,15 @@ h6 {
   height: 15vh;
   top: 40vh;
   bottom: 0;
-  background-image: url(../img/profitablecreators.png);
+  background-image: url("../img/profitablecreators.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   padding: 0;
   left: 25%;
-  animation: appear 2s ease-in;
+  animation: appear 0.8s ease-in;
   animation-delay: 0s;
+  image-orientation: from-image!important;
 }
 
 .course-logo {
@@ -487,7 +488,7 @@ h6 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  image-orientation: none;
+  image-orientation: from-image!important;
   padding: 0;
 }
 
