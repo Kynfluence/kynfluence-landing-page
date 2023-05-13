@@ -21,6 +21,8 @@ body {
   color: #444444;
   overflow: auto;
   height: 100%;
+  font-feature-settings: 'lnum' 1;
+
 }
 
 .f-background {
@@ -422,11 +424,11 @@ h6 {
 }
 
 .background-course-logo {
-  position: absolute;
+  position: relative;
   z-index: 1;
   width: 50%;
   height: 15vh;
-  top: 40vh;
+  top: 40%;
   bottom: 0;
   background-image: url("../img/profitablecreators.png");
   background-size: contain;
@@ -1779,6 +1781,30 @@ section {
 
 .shake:hover {
   animation: none;
+}
+
+.moneybackcard {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #5a5af3;
+}
+
+.moneybackcard h4 {
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 2vh;
+}
+
+.card h4 {
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 1rem;
 }
 
 @keyframes shake {
