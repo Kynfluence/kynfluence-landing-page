@@ -1832,6 +1832,14 @@ section {
   font-size: 1rem;
 }
 
+.syllabus-left-wrapper {
+  width: 100%;
+}
+
+.syllabus-right-wrapper {
+  width: 100%;
+}
+
 @keyframes shake {
   10%,
   90% {
