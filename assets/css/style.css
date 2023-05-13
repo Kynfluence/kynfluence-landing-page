@@ -9,9 +9,18 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  overflow: auto;
+  height: 100%;
 }
 
 .f-background {
