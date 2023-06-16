@@ -286,33 +286,4 @@
       ifExistsTrackWithObserve(className, observer);
     });
   });
-  // Modal code
-  // const myModalAlternative = new bootstrap.Modal('#exampleModal', []);
-
-  // var showModal = (function () {
-  //   var executed = false;
-  //   return function () {
-  //     if (!executed) {
-  //       executed = true;
-  //       myModalAlternative.show();
-  //     }
-  //   };
-  // })();
-
-  // var addEvent = function (obj, evt, fn) {
-  //   if (obj.addEventListener) {
-  //     obj.addEventListener(evt, fn, false);
-  //   }
-  //   else if (obj.attachEvent) {
-  //     obj.attachEvent("on" + evt, fn);
-  //   }
-  // };
-
-  // addEvent(document, "mouseout", function (event) {
-  //   event = event ? event : window.event;
-  //   var from = event.relatedTarget || event.toElement;
-  //   if ((!from || from.nodeName == "HTML") && event.clientY <= 100) {
-  //     showModal();
-  //   }
-  // });
-})()
+})();
