@@ -1578,6 +1578,8 @@ section {
 
 #footer .footer-newsletter {
   font-size: 15px;
+  position: relative;
+  top: -90px;
 }
 
 #footer .footer-newsletter h4 {
